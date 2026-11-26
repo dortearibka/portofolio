@@ -1,152 +1,93 @@
-// 1. Navigasi Menu Utama
-const navTabs = document.querySelectorAll(".nav-tab");
-const stageSections = document.querySelectorAll(".stage-section");
-const projectIndexList = document.getElementById("projectIndexList");
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+const calm = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-navTabs.forEach((tab) => {
-  tab.addEventListener("click", () => {
-    const target = tab.getAttribute("data-section");
+// 1. Muncul pelan saat di-scroll
+const reveal = new IntersectionObserver(
+  (items) =>
+    items.forEach((e) => {
+      if (e.isIntersecting) {
+        e.target.classList.add("in");
+        reveal.unobserve(e.target);
+      }
+    }),
+  { threshold: 0.12 },
+);
+$$(".reveal").forEach((el) => reveal.observe(el));
 
-    navTabs.forEach((t) => t.classList.remove("active"));
-    tab.classList.add("active");
+// 2. Menu aktif mengikuti posisi scroll
+const links = $$("#dock a:not(.cta)");
+const spy = new IntersectionObserver(
+  (items) =>
+    items.forEach((e) => {
+      if (e.isIntersecting) links.forEach((a) => a.classList.toggle("on", a.hash === "#" + e.target.id));
+    }),
+  { rootMargin: "-45% 0px -50% 0px" },
+);
+$$("main > section[id]:not(#kontak)").forEach((s) => spy.observe(s));
 
-    stageSections.forEach((sec) => {
-      sec.classList.toggle("active", sec.id === `sec-${target}`);
-    });
+// 3. Tab di setiap proyek
+$$(".frame").forEach((frame) => {
+  const tabs = $$("[role=tab]", frame);
+  const panels = $$(".panel", frame);
+  tabs.forEach((tab) =>
+    tab.addEventListener("click", () => {
+      tabs.forEach((t) => t.setAttribute("aria-selected", t === tab));
+      panels.forEach((p) => p.classList.toggle("on", p.id === tab.dataset.t));
+    }),
+  );
 
-    projectIndexList.classList.toggle("hidden", target !== "works");
+  // Frame miring tipis mengikuti mouse
+  if (calm) return;
+  frame.addEventListener("pointermove", (e) => {
+    if (e.pointerType !== "mouse") return;
+    const r = frame.getBoundingClientRect();
+    const x = (e.clientX - r.left) / r.width - 0.5;
+    const y = (e.clientY - r.top) / r.height - 0.5;
+    frame.style.transform = `perspective(1100px) rotateY(${x * 3}deg) rotateX(${-y * 3}deg)`;
   });
+  frame.addEventListener("pointerleave", () => (frame.style.transform = ""));
 });
 
-// 2. Navigasi Daftar Proyek (01 - 03)
-const indexRows = document.querySelectorAll(".index-row");
-const projectViews = document.querySelectorAll(".project-view");
-
-indexRows.forEach((row) => {
-  row.addEventListener("click", () => {
-    const projId = row.getAttribute("data-project");
-
-    indexRows.forEach((r) => r.classList.remove("active"));
-    row.classList.add("active");
-
-    projectViews.forEach((view) => {
-      view.classList.toggle("active", view.id === `proj-${projId}`);
-    });
-  });
-});
-
-// 3. Switch Mockup vs Design System
-document.querySelectorAll(".artboard-frame").forEach((frame) => {
-  const pills = frame.querySelectorAll(".screen-pill");
-  const panels = frame.querySelectorAll(".screen-panel");
-
-  pills.forEach((pill) => {
-    pill.addEventListener("click", () => {
-      const targetId = pill.getAttribute("data-target");
-
-      pills.forEach((p) => p.classList.remove("active"));
-      pill.classList.add("active");
-
-      panels.forEach((panel) => {
-        panel.classList.toggle("active", panel.id === targetId);
-      });
-    });
-  });
-});
-
-// 4. Filter Kategori Dokumentasi
-const filterChips = document.querySelectorAll(".filter-chip");
-const docCards = document.querySelectorAll(".doc-card");
-
-filterChips.forEach((chip) => {
+// 4. Filter dokumentasi
+const chips = $$(".filters button");
+chips.forEach((chip) =>
   chip.addEventListener("click", () => {
-    const filter = chip.getAttribute("data-filter");
+    chips.forEach((c) => c.classList.toggle("on", c === chip));
+    $$(".dgroup").forEach((g) => (g.hidden = chip.dataset.f !== "all" && g.dataset.cat !== chip.dataset.f));
+  }),
+);
 
-    filterChips.forEach((c) => c.classList.remove("active"));
-    chip.classList.add("active");
-
-    docCards.forEach((card) => {
-      const match = filter === "all" || card.getAttribute("data-category") === filter;
-      card.classList.toggle("hidden", !match);
-    });
-  });
-});
-
-// 5. Lightbox Foto Dokumentasi
-const docLightbox = document.getElementById("docLightbox");
-const lightboxCaption = document.getElementById("lightboxCaption");
-const lightboxBody = document.getElementById("lightboxBody");
-const closeLightboxBtn = document.getElementById("closeLightboxBtn");
-
-document.querySelectorAll(".doc-thumb").forEach((thumb) => {
-  thumb.addEventListener("click", () => {
-    const imgEl = thumb.querySelector("img");
-    const fullSrc = thumb.getAttribute("data-full") || (imgEl ? imgEl.src : "");
-    const caption = thumb.getAttribute("data-caption") || "";
-
-    lightboxCaption.textContent = caption;
-    lightboxBody.innerHTML = fullSrc ? `<img src="${fullSrc}" alt="${caption}" />` : `<p>Simpan foto dokumentasi di folder <code>assets/</code> lalu pasang di <code>index.html</code>.</p>`;
-
-    docLightbox.hidden = false;
-  });
-});
-
-if (closeLightboxBtn) {
-  closeLightboxBtn.addEventListener("click", () => {
-    docLightbox.hidden = true;
-  });
-}
-
-// 6. Pratinjau Sertifikat
-const certData = {
-  techofest: {
-    title: "UI/UX Designer di Techofest 2024",
-    image: "assets/UIUX Designer.jpg",
-  },
-  msib: {
-    title: "Web Development & UI/UX, MSIB Studi Independen 2024",
-    image: "assets/Stupen.jpg",
-  },
-  lokatana: {
-    title: "Volunteer Lokatana 2025",
-    image: "assets/Volunteer.jpg",
-  },
+// 5. Lightbox untuk foto dan sertifikat
+const lb = $("#lb");
+const lbImg = $("img", lb);
+const lbCap = $("#lbCap");
+const closeLb = () => {
+  lb.classList.remove("open");
+  lb.setAttribute("aria-hidden", "true");
 };
+$$("[data-lb]").forEach((btn) =>
+  btn.addEventListener("click", () => {
+    lbImg.src = btn.dataset.src;
+    lbImg.alt = lbCap.textContent = btn.dataset.cap;
+    lb.classList.add("open");
+    lb.setAttribute("aria-hidden", "false");
+    $("#lbClose").focus();
+  }),
+);
+$("#lbClose").addEventListener("click", closeLb);
+lb.addEventListener("click", (e) => e.target === lb && closeLb());
+addEventListener("keydown", (e) => e.key === "Escape" && closeLb());
 
-const certPreviewBox = document.getElementById("certPreviewBox");
-const certTitle = document.getElementById("certTitle");
-const certBody = document.getElementById("certBody");
-const closeCertBtn = document.getElementById("closeCertBtn");
-
-document.querySelectorAll(".cert-row").forEach((row) => {
-  row.addEventListener("click", () => {
-    const key = row.getAttribute("data-cert");
-    const item = certData[key];
-    if (!item) return;
-
-    certTitle.textContent = item.title;
-    certBody.innerHTML = item.image ? `<img src="${item.image}" alt="${item.title}" />` : `<p>Simpan gambar sertifikat di folder <code>assets/</code> lalu isi path-nya di <code>script.js</code>.</p>`;
-
-    certPreviewBox.hidden = false;
-  });
+// 6. Salin email
+const copyBtn = $("#copyEmail");
+copyBtn.addEventListener("click", async () => {
+  const label = copyBtn.textContent;
+  try {
+    await navigator.clipboard.writeText(copyBtn.dataset.email);
+    copyBtn.textContent = "Email tersalin";
+  } catch {
+    location.href = "mailto:" + copyBtn.dataset.email;
+  }
+  setTimeout(() => (copyBtn.textContent = label), 1800);
 });
-
-if (closeCertBtn) {
-  closeCertBtn.addEventListener("click", () => {
-    certPreviewBox.hidden = true;
-  });
-}
-
-// 7. Salin Email
-const copyEmailBtn = document.getElementById("copyEmailBtn");
-if (copyEmailBtn) {
-  copyEmailBtn.addEventListener("click", () => {
-    const email = copyEmailBtn.getAttribute("data-email");
-    navigator.clipboard?.writeText(email);
-    const prev = copyEmailBtn.textContent;
-    copyEmailBtn.textContent = "Email tersalin!";
-    setTimeout(() => {
-      copyEmailBtn.textContent = prev;
-    }, 1500);
-  });
-}

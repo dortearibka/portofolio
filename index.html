@@ -1,514 +1,311 @@
 <!doctype html>
 <html lang="id">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Portofolio Dortea Ribka Tadete, UI/UX Designer dari Manado." />
-    <title>Portofolio | Dortea Ribka Tadete</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div class="layout-shell">
-      <!-- =======================================================
-         PANEL KIRI: IDENTITAS & NAVIGASI
-    ======================================================== -->
-      <aside class="side-rail">
-        <div class="rail-top">
-          <div class="identity">
-            <span class="avatar-mark">DT<img src="assets/drt.jpg" alt="Foto Dortea Ribka Tadete" onerror="this.remove()" /></span>
-            <div>
-              <h1>Dortea Ribka Tadete</h1>
-              <p>UI/UX Designer, Manado</p>
-              
-            </div>
-          </div>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Portofolio Dortea Ribka Tadete, UI/UX Designer dari Manado.">
+<title>Dortea Ribka Tadete | UI/UX Designer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script>document.documentElement.classList.add("js")</script>
+</head>
+<body>
 
-          <!-- Menu Utama -->
-          <nav class="primary-nav" aria-label="Menu Utama">
-            <button type="button" class="nav-tab active" data-section="works">Proyek</button>
-            <button type="button" class="nav-tab" data-section="docs">Dokumentasi &amp; Sertifikat</button>
-            <button type="button" class="nav-tab" data-section="about">Tentang &amp; Kontak</button>
-          </nav>
+<nav class="dock" id="dock" aria-label="Menu utama">
+  <a href="#tentang" class="on">Tentang</a>
+  <a href="#proyek">Proyek</a>
+  <a href="#dokumentasi">Dokumentasi</a>
+  <a href="#kontak" class="cta">Kontak</a>
+</nav>
 
-          <!-- Daftar Proyek -->
-          <div class="project-index" id="projectIndexList">
-            <button type="button" class="index-row active" data-project="vertigrow">
-              <div class="index-info">
-                <strong>Vertigrow</strong>
-                <span>UI Designer, MSIB 2024</span>
-              </div>
-            </button>
-
-            <button type="button" class="index-row" data-project="nutrimom">
-              <div class="index-info">
-                <strong>Nutri Mom</strong>
-                <span>UI Designer, GEMASTIK</span>
-              </div>
-            </button>
-
-            <button type="button" class="index-row" data-project="reportformater">
-              <div class="index-info">
-                <strong>ReportFormater</strong>
-                <span>UI Designer, Techofest 2024</span>
-              </div>
-            </button>
-          </div>
-        </div>
-
-        <div class="rail-bottom">
-          <div class="social-row">
-            <a href="https://www.linkedin.com/in/dortearibkatadete/" target="_blank" rel="noopener">LinkedIn</a>
-            <a href="mailto:dortearibka@gmail.com">Email</a>
-          </div>
-        </div>
-      </aside>
-
-      <!-- =======================================================
-         PANEL KANAN: KONTEN UTAMA
-    ======================================================== -->
-      <main class="main-stage">
-        <!-- =====================================================
-           SECTION 1: PROYEK (MOCKUP, DESIGN SYSTEM, MASALAH & SOLUSI)
-      ====================================================== -->
-        <section id="sec-works" class="stage-section active">
-          <!-- PROYEK 01: VERTIGROW -->
-          <article id="proj-vertigrow" class="project-view active">
-            <header class="project-head">
-              <div>
-                <h2>Vertigrow</h2>
-                <p class="project-meta">Website panduan menanam vertikal. Saya berperan sebagai UI Designer dalam tim program MSIB Studi Independen 2024.</p>
-              </div>
-            </header>
-
-            <div class="artboard-frame">
-              <div class="screen-tabs">
-                <button type="button" class="screen-pill active" data-target="vg-mockup">Mockup</button>
-                <button type="button" class="screen-pill" data-target="vg-process">Proses</button>
-                <button type="button" class="screen-pill" data-target="vg-system">Design System</button>
-              </div>
-
-              <div class="artboard-canvas">
-                <!-- Tab Mockup -->
-                <div class="screen-panel active" id="vg-mockup">
-                  <!-- Ganti .mockup-placeholder dengan <img src="assets/mockup-vertigrow.png" class="figma-img" alt="Mockup Vertigrow"> -->
-                  <img src="mockup-placeholder tone-mint.jpg">
-                    <strong>Mockup Vertigrow</strong>
-                    <span>Letakkan gambar layar utama &amp; alur aplikasi di sini (<code>assets/mockup-vertigrow.png</code>)</span>
-                  </img>
-                </div>
-
-                <!-- Tab Proses: hapus tahap yang tidak kamu kerjakan, atau ganti isinya dengan gambar hasil riset/wireframe -->
-                <div class="screen-panel" id="vg-process">
-                  <div class="process-grid">
-                    <div class="process-step">
-                      <strong>Riset</strong>
-                      <p>Memahami kebutuhan calon pengguna.</p>
-                    </div>
-                    <div class="process-step">
-                      <strong>Alur pengguna</strong>
-                      <p>Menyusun alur dari halaman awal hingga panduan.</p>
-                    </div>
-                    <div class="process-step">
-                      <strong>Wireframe</strong>
-                      <p>Membuat kerangka setiap layar.</p>
-                    </div>
-                    <div class="process-step">
-                      <strong>Desain UI</strong>
-                      <p>Menyempurnakan visual dan komponen akhir.</p>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Tab Design System -->
-                <div class="screen-panel" id="vg-system">
-                  <div class="ds-grid">
-                    <div class="ds-box">
-                      <span class="ds-label">Warna</span>
-                      <div class="swatch-row">
-                        <div class="swatch" style="background: #15803d; color: #fff">#15803D</div>
-                        <div class="swatch" style="background: #dcfce7; color: #14532d">#DCFCE7</div>
-                        <div class="swatch" style="background: #141518; color: #fff">#141518</div>
-                      </div>
-                    </div>
-                    <div class="ds-box">
-                      <span class="ds-label">Font dan komponen</span>
-                      <p class="ds-type">Plus Jakarta Sans, heading 20px dan body 14px</p>
-                      <div class="ds-components">
-                        <span class="comp-btn-green">Lihat Panduan</span>
-                        <span class="comp-chip-green">Pemula</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="problem-solution">
-              <div class="ps-block">
-                <h3>Masalah</h3>
-                <p>Banyak orang ingin menanam di lahan sempit, tetapi belum tahu cara memulainya.</p>
-              </div>
-              <div class="ps-block">
-                <h3>Solusi</h3>
-                <p>Website panduan yang menjelaskan cara menanam vertikal secara bertahap, sehingga mudah diikuti pemula.</p>
-              </div>
-            </div>
-          </article>
-
-          <!-- PROYEK 02: NUTRI MOM -->
-          <article id="proj-nutrimom" class="project-view">
-            <header class="project-head">
-              <div>
-                <h2>Nutri Mom</h2>
-                <p class="project-meta">Desain UI aplikasi gizi untuk ibu hamil, dibuat untuk lomba UX design GEMASTIK. Saya berperan sebagai UI Designer.</p>
-              </div>
-            </header>
-
-            <div class="artboard-frame">
-              <div class="screen-tabs">
-                <button type="button" class="screen-pill active" data-target="nm-mockup">Mockup</button>
-                <button type="button" class="screen-pill" data-target="nm-system">Design System</button>
-              </div>
-
-              <div class="artboard-canvas">
-                <!-- Tab Mockup -->
-                <div class="screen-panel active" id="nm-mockup">
-                  <!-- Ganti .mockup-placeholder dengan <img src="assets/mockup-nutrimom.png" class="figma-img" alt="Mockup Nutri Mom"> -->
-                  <div class="mockup-placeholder tone-peach">
-                    <strong>Mockup Nutri Mom</strong>
-                    <span>Letakkan gambar layar pemantauan gizi &amp; rekomendasi menu di sini (<code>assets/mockup-nutrimom.png</code>)</span>
-                  </div>
-                </div>
-
-                <!-- Tab Design System -->
-                <div class="screen-panel" id="nm-system">
-                  <div class="ds-grid">
-                    <div class="ds-box">
-                      <span class="ds-label">Warna</span>
-                      <div class="swatch-row">
-                        <div class="swatch" style="background: #e05a47; color: #fff">#E05A47</div>
-                        <div class="swatch" style="background: #fdf2ee; color: #5c231b">#FDF2EE</div>
-                        <div class="swatch" style="background: #261714; color: #fff">#261714</div>
-                      </div>
-                    </div>
-                    <div class="ds-box">
-                      <span class="ds-label">Font dan komponen</span>
-                      <p class="ds-type">Nunito dan DM Sans, ukuran teks besar supaya nyaman dibaca</p>
-                      <div class="ds-components">
-                        <span class="comp-btn-coral">Catat Asupan</span>
-                        <span class="comp-chip-coral">Trimester 2</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="problem-solution">
-              <div class="ps-block">
-                <h3>Masalah</h3>
-                <p>Aplikasi kesehatan umumnya terasa kaku dan penuh istilah medis, sehingga ibu hamil kurang nyaman memantau kebutuhan gizi hariannya.</p>
-              </div>
-              <div class="ps-block">
-                <h3>Solusi</h3>
-                <p>Tampilan dengan warna hangat, informasi gizi dalam kartu ringkas, dan rekomendasi menu harian.</p>
-              </div>
-            </div>
-          </article>
-
-          <!-- PROYEK 03: REPORTFORMATER -->
-          <article id="proj-reportformater" class="project-view">
-            <header class="project-head">
-              <div>
-                <h2>ReportFormater</h2>
-                <p class="project-meta">Desain UI web editor untuk merapikan format laporan, dikerjakan di Techofest 2024 dengan design system. Saya berperan sebagai UI Designer.</p>
-              </div>
-            </header>
-
-            <div class="artboard-frame">
-              <div class="screen-tabs">
-                <button type="button" class="screen-pill active" data-target="rf-mockup">Mockup</button>
-                <button type="button" class="screen-pill" data-target="rf-system">Design System</button>
-              </div>
-
-              <div class="artboard-canvas">
-                <!-- Tab Mockup -->
-                <div class="screen-panel active" id="rf-mockup">
-                  <!-- Ganti .mockup-placeholder dengan <img src="assets/mockup-reportformater.png" class="figma-img" alt="Mockup ReportFormater"> -->
-                  <div class="mockup-placeholder tone-blue">
-                    <strong>Mockup ReportFormater</strong>
-                    <span>Letakkan gambar tampilan editor dokumen di sini (<code>assets/mockup-reportformater.png</code>)</span>
-                  </div>
-                </div>
-
-                <!-- Tab Design System -->
-                <div class="screen-panel" id="rf-system">
-                  <div class="ds-grid">
-                    <div class="ds-box">
-                      <span class="ds-label">Warna</span>
-                      <div class="swatch-row">
-                        <div class="swatch" style="background: #1d4ed8; color: #fff">#1D4ED8</div>
-                        <div class="swatch" style="background: #f1f5f9; color: #0f172a">#F1F5F9</div>
-                        <div class="swatch" style="background: #0f172a; color: #fff">#0F172A</div>
-                      </div>
-                    </div>
-                    <div class="ds-box">
-                      <span class="ds-label">Font dan komponen</span>
-                      <p class="ds-type">Inter dan JetBrains Mono, grid 8pt, radius 8px</p>
-                      <div class="ds-components">
-                        <span class="comp-btn-blue">Rapikan Dokumen</span>
-                        <span class="comp-chip-blue">Format A4</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="problem-solution">
-              <div class="ps-block">
-                <h3>Masalah</h3>
-                <p>Mahasiswa sering menghabiskan waktu untuk mengatur margin, font, dan spasi agar laporan sesuai pedoman kampus.</p>
-              </div>
-              <div class="ps-block">
-                <h3>Solusi</h3>
-                <p>Editor web dengan tiga bagian: daftar template di kiri, pratinjau dokumen di tengah, dan panel pengaturan format di kanan.</p>
-              </div>
-            </div>
-          </article>
-        </section>
-
-        <!-- =====================================================
-           SECTION 2: DOKUMENTASI KEGIATAN & SERTIFIKAT
-      ====================================================== -->
-        <section id="sec-docs" class="stage-section">
-          <h2>Organisasi &amp; Kegiatan</h2>
-          <p class="section-lead">Kegiatan yang pernah saya ikuti selama kuliah di UNSRAT IT Community dan Paguyuban KSE UNSRAT.</p>
-
-          <!-- FILTER DOKUMENTASI -->
-          <div class="filter-bar">
-            <button type="button" class="filter-chip active" data-filter="all">Semua</button>
-            <button type="button" class="filter-chip" data-filter="uitc">UNSRAT IT Community</button>
-            <button type="button" class="filter-chip" data-filter="kse">Paguyuban KSE UNSRAT</button>
-          </div>
-
-          <!-- GALERI DOKUMENTASI -->
-          <div class="docs-grid" id="docsGrid">
-            <!-- UNSRAT IT COMMUNITY 1 -->
-            <figure class="doc-card" data-category="uitc">
-              <div class="doc-thumb" data-caption="UNSRAT IT Community: Kegiatan Komunitas">
-                <div class="thumb-placeholder">
-                  <span>FOTO UNSRAT IT COMMUNITY 1</span>
-                  <small>assets/uitc-1.jpg</small>
-                </div>
-              </div>
-              <figcaption>
-                <span class="doc-tag">UNSRAT IT Community</span>
-                <strong>Kegiatan &amp; Diskusi Komunitas IT</strong>
-                <p>Mengikuti diskusi seputar teknologi dan menjalankan kegiatan komunitas mahasiswa IT Unsrat.</p>
-              </figcaption>
-            </figure>
-
-            <!-- UNSRAT IT COMMUNITY 2: MENTOR UI/UX -->
-            <figure class="doc-card" data-category="uitc">
-              <div class="doc-thumb" data-caption="UNSRAT IT Community: Mentor UI/UX">
-                <div class="thumb-placeholder">
-                  <img src="assets/unity-1.jpeg" alt="mentoring uiux" />
-                </div>
-              </div>
-              <figcaption>
-                <span class="doc-tag">UNSRAT IT Community</span>
-                <strong>Mentoring UI/UX</strong>
-                <p>Membantu teman-teman mempelajari dasar desain antarmuka dan Figma, serta memberikan masukan pada hasil desain mereka.</p>
-              </figcaption>
-            </figure>
-
-            <!-- UNSRAT IT COMMUNITY 3: TECHOFEST -->
-            <figure class="doc-card" data-category="uitc">
-              <div class="doc-thumb" data-caption="UNSRAT IT Community: Techofest">
-                <img src="assets/techofest.jpg" alt="Dokumentasi Techofest" />
-              </div>
-              <figcaption>
-                <span class="doc-tag">UNSRAT IT Community</span>
-                <strong>UI Designer di Techofest</strong>
-                <p>Dokumentasi saat mengerjakan desain tampilan web ReportFormater bersama tim di Techofest.</p>
-              </figcaption>
-            </figure>
-
-            <!-- UNSRAT IT COMMUNITY 4 -->
-            <figure class="doc-card" data-category="uitc">
-              <div class="doc-thumb" data-caption="UNSRAT IT Community: Kegiatan Komunitas">
-                <div class="thumb-placeholder">
-                  <span>FOTO KEGIATAN KOMUNITAS</span>
-                  <small>assets/uitc-4.jpg</small>
-                </div>
-              </div>
-              <figcaption>
-                <span class="doc-tag">UNSRAT IT Community</span>
-                <strong>Kegiatan Komunitas IT</strong>
-                <p>Kegiatan dan kolaborasi bersama anggota UNSRAT IT Community.</p>
-              </figcaption>
-            </figure>
-
-            <!-- PAGUYUBAN KSE UNSRAT 1 -->
-            <figure class="doc-card" data-category="kse">
-              <div class="doc-thumb" data-caption="Paguyuban KSE UNSRAT: Program Kerja">
-                <img src="assets/kse-1.jpeg" alt="Kegiatan Paguyuban KSE UNSRAT" />
-              </div>
-              <figcaption>
-                <span class="doc-tag">Paguyuban KSE UNSRAT</span>
-                <strong>Program Kerja &amp; Kegiatan Paguyuban</strong>
-                <p>Mengikuti kepanitiaan dan membantu menjalankan berbagai program kerja bersama teman-teman beswan KSE UNSRAT.</p>
-              </figcaption>
-            </figure>
-
-            <!-- PAGUYUBAN KSE UNSRAT 2 -->
-            <figure class="doc-card" data-category="kse">
-              <div class="doc-thumb" data-caption="Paguyuban KSE UNSRAT: Kegiatan Sosial">
-                <img src="assets/kse-2.jpg" alt="Kegiatan Sosial KSE UNSRAT" />
-              </div>
-              <figcaption>
-                <span class="doc-tag">Paguyuban KSE UNSRAT</span>
-                <strong>Kegiatan Sosial &amp; Komunitas</strong>
-                <p>Kegiatan sosial dan acara kebersamaan bersama anggota paguyuban.</p>
-              </figcaption>
-            </figure>
-
-            <!-- PAGUYUBAN KSE UNSRAT 3: VOLUNTEER -->
-            <figure class="doc-card" data-category="kse">
-              <div class="doc-thumb" data-caption="Paguyuban KSE UNSRAT: Volunteer Lokatana 2025">
-                <div class="thumb-placeholder">
-                  <img src="assets/lokatana.jpeg" alt="volunteer lokatana" />
-                </div>
-              </div>
-              <figcaption>
-                <span class="doc-tag">Paguyuban KSE UNSRAT</span>
-                <strong>Volunteer Lokatana 2025</strong>
-                <p>Membantu koordinasi di lapangan agar acara Lokatana 2025 berjalan lancar.</p>
-              </figcaption>
-            </figure>
-
-            <!-- PAGUYUBAN KSE UNSRAT 4 -->
-            <figure class="doc-card" data-category="kse">
-              <div class="doc-thumb" data-caption="Paguyuban KSE UNSRAT: Kegiatan Paguyuban">
-                <div class="thumb-placeholder">
-                  <img src="assets/kse-4.jpeg" alt="company visit masarang" />
-                </div>
-              </div>
-              <figcaption>
-                <span class="doc-tag">Paguyuban KSE UNSRAT</span>
-                <strong>Kegiatan Paguyuban</strong>
-                <p>Kegiatan dan kebersamaan bersama anggota Paguyuban KSE UNSRAT.</p>
-              </figcaption>
-            </figure>
-          </div>
-
-          <!-- Daftar Sertifikat -->
-          <div class="cert-section">
-            <h3>Sertifikat</h3>
-            <div class="cert-list">
-              <button type="button" class="cert-row" data-cert="techofest">
-                <span class="mono-year">2024</span>
-                <strong>UI/UX Designer di Techofest 2024</strong>
-                <span>Lihat</span>
-              </button>
-
-              <button type="button" class="cert-row" data-cert="msib">
-                <span class="mono-year">2024</span>
-                <strong>Web Development &amp; UI/UX, MSIB Studi Independen 2024</strong>
-                <span>Lihat</span>
-              </button>
-
-              <button type="button" class="cert-row" data-cert="lokatana">
-                <span class="mono-year">2025</span>
-                <strong>Volunteer Lokatana 2025</strong>
-                <span>Lihat</span>
-              </button>
-            </div>
-
-            <div class="cert-preview" id="certPreviewBox" hidden>
-              <div class="cert-preview-top">
-                <strong id="certTitle">Judul Sertifikat</strong>
-                <button type="button" id="closeCertBtn">Tutup</button>
-              </div>
-              <div class="cert-preview-body" id="certBody"></div>
-            </div>
-          </div>
-        </section>
-
-        <!-- =====================================================
-           SECTION 3: TENTANG & KONTAK
-      ====================================================== -->
-        <section id="sec-about" class="stage-section">
-          <div class="about-intro">
-            <div class="about-photo"><span>DT</span><img src="assets/drt.jpg" alt="Foto Dortea Ribka Tadete" onerror="this.remove()" /></div>
-            <div>
-              <h2>Halo, saya Dortea.</h2>
-              <p class="section-lead">
-                Saya fresh graduate Teknik Informatika Universitas Sam Ratulangi dari Manado. Saya senang merancang tampilan web dan aplikasi yang rapi serta mudah digunakan. Saya mengerjakan desain di Figma, mulai dari menyusun alur layar
-                hingga membuat komponen, dan memahami dasar HTML dan CSS sehingga desain mudah diterapkan ke dalam kode.
-              </p>
-            </div>
-          </div>
-
-          <div class="about-grid">
-            <div class="about-box">
-              <span class="ds-label">Skill dan tools</span>
-              <div class="tools-list">
-                <span>UI Design</span>
-                <span>Web Design</span>
-                <span>Design System</span>
-                <span>Figma</span>
-                <span>HTML &amp; CSS</span>
-                <span>Microsoft Office</span>
-                <span>User Research (MSIB)</span>
-                <span>User Flow (MSIB)</span>
-                <span>Design Thinking (MSIB)</span>
-              </div>
-            </div>
-
-            <div class="about-box">
-              <span class="ds-label">Organisasi dan aktivitas</span>
-              <p class="about-note">Pernah aktif di <strong>Paguyuban KSE UNSRAT</strong> dan <strong>UNSRAT IT Community</strong>. Pernah menjadi <strong>UI/UX Designer Mentor</strong> dan sering mengikuti kegiatan volunteer.</p>
-            </div>
-
-            <div class="about-box wide">
-              <span class="ds-label">Pengalaman dan pendidikan</span>
-              <ul class="exp-list">
-                <li><strong>Studi Independen Web Development &amp; UI/UX</strong><span>Infinite Learning Indonesia, Sep sampai Des 2024</span></li>
-                <li><strong>S1 Teknik Informatika</strong><span>Universitas Sam Ratulangi, 2022 sampai 2026</span></li>
-                <li><strong>Penerima Beasiswa Yayasan Karya Salemba Empat</strong><span>2 tahun</span></li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="contact-block">
-            <h3>Kontak</h3>
-            <div class="contact-actions">
-              <button type="button" class="btn-solid" id="copyEmailBtn" data-email="dortearibka@gmail.com">Salin Email: dortearibka@gmail.com</button>
-              <a href="https://www.linkedin.com/in/dortearibkatadete/" target="_blank" rel="noopener" class="btn-subtle">LinkedIn</a>
-              <!-- Ganti href dengan file CV PDF kamu, misal: assets/CV-Dortea-Ribka-Tadete.pdf -->
-              <a href="assets/CV-Dortea-Ribka-Tadete.pdf" class="btn-subtle" download>Unduh CV</a>
-            </div>
-          </div>
-        </section>
-      </main>
-    </div>
-
-    <!-- Lightbox Foto Dokumentasi -->
-    <div class="lightbox" id="docLightbox" hidden>
-      <div class="lightbox-card">
-        <div class="lightbox-top">
-          <span id="lightboxCaption">Keterangan Dokumentasi</span>
-          <button type="button" id="closeLightboxBtn">Tutup</button>
-        </div>
-        <div class="lightbox-body" id="lightboxBody"></div>
+<main>
+<!-- ============ TENTANG ============ -->
+<section id="tentang" class="wrap">
+  <div class="hero">
+    <div class="hero-text">
+      <h1><span class="sel">Dortea Ribka Tadete<i></i><i></i><i></i><i></i>
+        <span class="cursor" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18"><path d="M1 1l6.5 15 2-6 6-2z" fill="#1d6bff" stroke="#fff" stroke-width="1.2"/></svg><b>Halo!</b></span>
+      </span></h1>
+      <p class="role">UI/UX Designer dari Manado</p>
+      <p class="lead">Fresh Graduate dari Universitas Sam Ratulangi, Memiliki pengalaman dalam project, aktif dalam organisasi selama masa perkuliahan, dengan minat pada bidang UI/UX Design.</p>
+      <div class="acts">
+        <a class="btn solid" href="#proyek">Lihat proyek</a>
+        <a class="btn" href="assets/CV-Dortea-Ribka-Tadete.pdf" download>Unduh CV</a>
       </div>
     </div>
+    <figure class="photo">
+      <div class="ph"><span>DT</span><img src="assets/drt.jpg" alt="Foto Dortea Ribka Tadete" onerror="this.remove()"></div>
+    </figure>
+  </div>
 
-    <script src="script.js"></script>
-  </body>
+  <div class="about reveal">
+    <div>
+      <h3>Pendidikan dan pengalaman</h3>
+      <ul class="tl">
+        <li><time>2022 - 2026</time><strong>S1 Teknik Informatika</strong><span>Universitas Sam Ratulangi</span></li>
+        <li><time>September - Desember 2024</time><strong>Studi Independen Web Development &amp; UI/UX</strong><span>Infinite Learning Indonesia</span></li>
+        <li><time>2024 - 2025</time><strong>Sekretaris Divisi Kewirausahaan</strong><span>Paguyuban Sabua Karya Salemba Empat Unsrat</span></li>
+        <li><time>2025 - 2026</time><strong>Anggota Divisi External dan Partnership</strong><span>Paguyuban Sabua Karya Salemba Empat Unsrat</span></li>
+        <li><time>2025 - 2026</time><strong>Committee Member UIUX</strong><span>Unsrat IT Community</span></li>
+        <li><time>2 Tahun</time><strong>Penerima Beasiswa</strong><span>Yayasan Karya Salemba Empat</span></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Skill dan tools</h3>
+      <ul class="tags">
+        <li>UI Design</li><li>Web Design</li><li>UX Design</li><li>Figma</li><li>HTML &amp; CSS</li><li>Microsoft Word</li><li>User Research</li><li>User Flow</li><li>Design Thinking</li>
+      </ul>
+      <p class="small">User Research, User Flow, dan Design Thinking saya pelajari di MSIB.</p>
+      <h3>Pengalaman Organisasi</h3>
+      <p><strong>Paguyuban KSE UNSRAT</strong></p>
+      <p><strong>Unsrat IT Community</strong></p>
+      <p><strong>Himpunan Mahasiswa Elektro</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROYEK ============ -->
+<section id="proyek" class="wrap sec">
+  <h2 class="sec-title">Proyek</h2>
+  <p class="sec-lead">Tiga proyek yang paling mewakili cara kerja saya. Klik tab di tiap proyek untuk melihat mockup, proses, dan design system-nya.</p>
+
+  <article class="project reveal" style="--c:#15803d;--c2:#e2f3e8">
+    <div class="p-info">
+      <h3>Vertigrow</h3>
+      <p>Website panduan menanam vertikal. Saya jadi UI Designer di tim program MSIB Studi Independen 2024.</p>
+      <h4>Masalah</h4>
+      <p>Banyak orang mau menanam di lahan sempit, tapi bingung mulai dari mana.</p>
+      <h4>Solusi</h4>
+      <p>Website panduan yang menjelaskan cara menanam vertikal langkah demi langkah, jadi pemula pun bisa mengikutinya.</p>
+    </div>
+    <div class="frame" data-name="Vertigrow">
+      <div class="tabs" role="tablist">
+        <button role="tab" aria-selected="true" data-t="vg-m">Mockup</button>
+        <button role="tab" aria-selected="false" data-t="vg-p">Proses</button>
+        <button role="tab" aria-selected="false" data-t="vg-s">Design System</button>
+      </div>
+      <div class="panel on" id="vg-m" role="tabpanel"><div class="mock"><span>Mockup Vertigrow segera ditambahkan</span><img src="assets/mockup-vertigrow.png" alt="Mockup Vertigrow" onerror="this.remove()"></div></div>
+      <div class="panel" id="vg-p" role="tabpanel">
+        <ol class="steps">
+          <li><strong>Riset</strong><span>Mencari tahu apa yang dibutuhkan calon pengguna.</span></li>
+          <li><strong>Alur pengguna</strong><span>Menyusun alur dari halaman awal sampai panduan.</span></li>
+          <li><strong>Wireframe</strong><span>Membuat kerangka setiap layar.</span></li>
+          <li><strong>Desain UI</strong><span>Menyempurnakan visual dan komponen akhir.</span></li>
+        </ol>
+      </div>
+      <div class="panel" id="vg-s" role="tabpanel">
+        <div class="ds">
+          <div><h5>Warna</h5><div class="sw"><b style="background:#15803d;color:#fff">#15803D</b><b style="background:#dcfce7">#DCFCE7</b><b style="background:#141518;color:#fff">#141518</b></div></div>
+          <div><h5>Font dan komponen</h5><p>Plus Jakarta Sans, heading 20px dan body 14px</p><div class="ui"><span class="b">Lihat Panduan</span><span class="c">Pemula</span></div></div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <article class="project reveal" style="--c:#e05a47;--c2:#fbe9e3">
+    <div class="p-info">
+      <h3>Nutri Mom</h3>
+      <p>Desain aplikasi gizi untuk ibu hamil, dibuat untuk lomba UX Design GEMASTIK. Peran saya UI Designer.</p>
+      <h4>Masalah</h4>
+      <p>Aplikasi kesehatan sering terasa kaku dan penuh istilah medis, sehingga ibu hamil kurang nyaman memantau gizi hariannya.</p>
+      <h4>Solusi</h4>
+      <p>Tampilan dengan warna hangat, info gizi dalam kartu singkat, dan rekomendasi menu harian.</p>
+    </div>
+    <div class="frame" data-name="Nutri Mom">
+      <div class="tabs" role="tablist">
+        <button role="tab" aria-selected="true" data-t="nm-m">Mockup</button>
+        <button role="tab" aria-selected="false" data-t="nm-s">Design System</button>
+      </div>
+      <div class="panel on" id="nm-m" role="tabpanel"><div class="mock"><span>Mockup Nutri Mom segera ditambahkan</span><img src="assets/mockup-nutrimom.png" alt="Mockup Nutri Mom" onerror="this.remove()"></div></div>
+      <div class="panel" id="nm-s" role="tabpanel">
+        <div class="ds">
+          <div><h5>Warna</h5><div class="sw"><b style="background:#e05a47;color:#fff">#E05A47</b><b style="background:#fdf2ee">#FDF2EE</b><b style="background:#261714;color:#fff">#261714</b></div></div>
+          <div><h5>Font dan komponen</h5><p>Nunito dan DM Sans, ukuran teks besar agar nyaman dibaca</p><div class="ui"><span class="b">Catat Asupan</span><span class="c">Trimester 2</span></div></div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <article class="project reveal" style="--c:#1d4ed8;--c2:#e4ecfd">
+    <div class="p-info">
+      <h3>ReportFormater</h3>
+      <p>Desain web editor untuk merapikan format laporan, dikerjakan di Techofest 2024 lengkap dengan design system. Peran saya UI Designer.</p>
+      <h4>Masalah</h4>
+      <p>Mahasiswa sering buang waktu mengatur margin, font, dan spasi supaya laporan sesuai pedoman kampus.</p>
+      <h4>Solusi</h4>
+      <p>Editor web dengan tiga bagian: daftar template di kiri, pratinjau dokumen di tengah, dan pengaturan format di kanan.</p>
+    </div>
+    <div class="frame" data-name="ReportFormater">
+      <div class="tabs" role="tablist">
+        <button role="tab" aria-selected="true" data-t="rf-m">Mockup</button>
+        <button role="tab" aria-selected="false" data-t="rf-s">Design System</button>
+      </div>
+      <div class="panel on" id="rf-m" role="tabpanel"><div class="mock"><span>Mockup ReportFormater segera ditambahkan</span><img src="assets/mockup-reportformater.png" alt="Mockup ReportFormater" onerror="this.remove()"></div></div>
+      <div class="panel" id="rf-s" role="tabpanel">
+        <div class="ds">
+          <div><h5>Warna</h5><div class="sw"><b style="background:#1d4ed8;color:#fff">#1D4ED8</b><b style="background:#f1f5f9">#F1F5F9</b><b style="background:#0f172a;color:#fff">#0F172A</b></div></div>
+          <div><h5>Font dan komponen</h5><p>Inter dan JetBrains Mono, grid 8pt, radius 8px</p><div class="ui"><span class="b">Rapikan Dokumen</span><span class="c">Format A4</span></div></div>
+        </div>
+      </div>
+    </div>
+  </article>
+</section>
+
+<!-- ============ DOKUMENTASI & SERTIFIKAT ============ -->
+<section id="dokumentasi" class="wrap sec">
+  <h2 class="sec-title">Dokumentasi dan sertifikat</h2>
+  <p class="sec-lead">Kegiatan selama mengikuti perkuliahan &amp; organisasi. Klik foto untuk memperbesar.</p>
+
+  <div class="filters" role="group" aria-label="Filter kegiatan">
+    <button type="button" class="on" data-f="all">Semua</button>
+    <button type="button" data-f="uitc">UNSRAT IT Community</button>
+    <button type="button" data-f="kse">Paguyuban KSE UNSRAT</button>
+    <button type="button" data-f="lomba">Gemastik 2024</button>
+  </div>
+
+  <div class="dgroup" data-cat="uitc">
+    <h3>UNSRAT IT Community</h3>
+    <div class="dgrid">
+      <figure class="doc">
+        <button type="button" data-lb data-src="assets/unity-2.jpg" data-cap="Demo dan Retrospective Project">
+          <img src="assets/unity-2.jpg" alt="Demo dan retrospective project Unity" loading="lazy" onerror="this.closest('.doc').remove()">
+        </button>
+        <figcaption>
+          <strong>Demo dan Retrospective Project</strong>
+          <p>Demo dan retrospective pengerjaan project akhir Unity.</p>
+        </figcaption>
+      </figure>
+      <figure class="doc">
+        <button type="button" data-lb data-src="assets/unity-1.jpeg" data-cap="Mentoring UI/UX">
+          <img src="assets/unity-1.jpeg" alt="Mentoring UI/UX" loading="lazy" onerror="this.closest('.doc').remove()">
+        </button>
+        <figcaption>
+          <strong>Mentoring UI/UX</strong>
+          <p>Membantu teman-teman belajar dasar desain antarmuka dan Figma, sekaligus memberi masukan untuk desain mereka.</p>
+        </figcaption>
+      </figure>
+      <figure class="doc">
+        <button type="button" data-lb data-src="assets/techofest.jpg" data-cap="UI Designer di Techofest">
+          <img src="assets/techofest.jpg" alt="Dokumentasi Techofest" loading="lazy" onerror="this.closest('.doc').remove()">
+        </button>
+        <figcaption>
+          <strong>UI Designer di Techofest</strong>
+          <p>Momen mengerjakan desain web ReportFormater bareng tim di Techofest.</p>
+        </figcaption>
+      </figure>
+      <figure class="doc">
+        <button type="button" data-lb data-src="assets/unity-3.jpg" data-cap="Retrospective Pengerjaan Project">
+          <img src="assets/unity-3.jpg" alt="Retrospective pengerjaan project Unity" loading="lazy" onerror="this.closest('.doc').remove()">
+        </button>
+        <figcaption>
+          <strong>Retrospective Pengerjaan Project</strong>
+          <p>Retrospective pengerjaan project Unity.</p>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <div class="dgroup" data-cat="kse">
+    <h3>Paguyuban KSE UNSRAT</h3>
+    <div class="dgrid">
+      <figure class="doc">
+        <button type="button" data-lb data-src="assets/kse-1.jpeg" data-cap="Program kerja paguyuban">
+          <img src="assets/kse-1.jpeg" alt="Kegiatan Paguyuban KSE UNSRAT" loading="lazy" onerror="this.closest('.doc').remove()">
+        </button>
+        <figcaption>
+          <strong>Program kerja paguyuban</strong>
+          <p>Ikut kepanitiaan dan membantu menjalankan program kerja bersama teman-teman beswan KSE UNSRAT.</p>
+        </figcaption>
+      </figure>
+      <figure class="doc">
+        <button type="button" data-lb data-src="assets/kse-2.jpg" data-cap="Kegiatan sosial">
+          <img src="assets/kse-2.jpg" alt="Kegiatan sosial KSE UNSRAT" loading="lazy" onerror="this.closest('.doc').remove()">
+        </button>
+        <figcaption>
+          <strong>Kegiatan sosial</strong>
+          <p>Kegiatan sosial dan acara kebersamaan bersama anggota paguyuban.</p>
+        </figcaption>
+      </figure>
+      <figure class="doc">
+        <button type="button" data-lb data-src="assets/lokatana.jpeg" data-cap="Volunteer Lokatana 2025">
+          <img src="assets/lokatana.jpeg" alt="Volunteer Lokatana" loading="lazy" onerror="this.closest('.doc').remove()">
+        </button>
+        <figcaption>
+          <strong>Volunteer Lokatana 2025</strong>
+          <p>Membantu koordinasi di lapangan supaya acara Lokatana 2025 berjalan lancar.</p>
+        </figcaption>
+      </figure>
+      <figure class="doc">
+        <button type="button" data-lb data-src="assets/kse-4.jpeg" data-cap="Company visit ke Masarang">
+          <img src="assets/kse-4.jpeg" alt="Company visit Masarang" loading="lazy" onerror="this.closest('.doc').remove()">
+        </button>
+        <figcaption>
+          <strong>Company visit ke Masarang</strong>
+          <p>Kunjungan bersama anggota Paguyuban KSE UNSRAT.</p>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <div class="dgroup" data-cat="lomba">
+    <h3>Gemastik 2024</h3>
+    <div class="dgrid">
+      <figure class="doc">
+        <button type="button" data-lb data-src="assets/gemastik ux.jpg" data-cap="Gemastik 2024 UX Design">
+          <img src="assets/gemastik ux.jpg" alt="Gemastik UX" loading="lazy" onerror="this.closest('.doc').remove()">
+        </button>
+        <figcaption>
+          <strong>Gemastik 2024 - UX Design</strong>
+          <p>Kompetisi Gemastik 2024 bidang UX Design.</p>
+        </figcaption>
+      </figure>
+      <figure class="doc">
+        <button type="button" data-lb data-src="assets/gemastik bisnis.jpg" data-cap="Gemastik 2024 ICT Business Development">
+          <img src="assets/gemastik bisnis.jpg" alt="Gemastik bisnis" loading="lazy" onerror="this.closest('.doc').remove()">
+        </button>
+        <figcaption>
+          <strong>Gemastik 2024 - ICT Business Development</strong>
+          <p>Kompetisi ICT Business Development.</p>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <h3 class="sub" id="sertifikat">Sertifikat</h3>
+  <div class="certs">
+    <button type="button" class="cert" data-lb data-src="assets/Stupen.jpg" data-cap="Web Development &amp; UI/UX, MSIB Studi Independen 2024"><b>2024</b><strong>Web Development &amp; UI/UX, MSIB Studi Independen 2024</strong><span>Lihat</span></button>
+    <button type="button" class="cert" data-lb data-src="assets/Sertifikat Magang.jpg" data-cap="Web Development &amp; UI/UX, Magang 2024"><b>2024</b><strong>Web Development &amp; UI/UX, Magang 2024</strong><span>Lihat</span></button>
+    <button type="button" class="cert" data-lb data-src="assets/UIUX Designer.jpg" data-cap="UI/UX Designer di Techofest 2024"><b>2024</b><strong>UI/UX Designer di Techofest 2024</strong><span>Lihat</span></button>
+    <button type="button" class="cert" data-lb data-src="assets/Volunteer.jpg" data-cap="Volunteer Lokatana 2025"><b>2025</b><strong>Volunteer Lokatana 2025</strong><span>Lihat</span></button>
+  </div>
+</section>
+
+<!-- ============ KONTAK ============ -->
+<section id="kontak" class="wrap">
+  <div class="contact reveal">
+    <div>
+      <h2>Punya proyek atau lowongan? Hubungi saya.</h2>
+      <a class="mail" href="mailto:dortearibka@gmail.com">dortearibka@gmail.com</a>
+    </div>
+    <div class="acts">
+      <button type="button" class="btn solid" id="copyEmail" data-email="dortearibka@gmail.com">Salin email</button>
+      <a class="btn" href="https://www.linkedin.com/in/dortearibkatadete/" target="_blank" rel="noopener">Buka LinkedIn</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="wrap foot">&copy; 2026 Dortea Ribka Tadete.</footer>
+
+<div class="lb" id="lb" aria-hidden="true">
+  <figure>
+    <img src="" alt="">
+    <figcaption><span id="lbCap"></span><button type="button" id="lbClose">Tutup</button></figcaption>
+  </figure>
+</div>
+
+<script src="script.js"></script>
+</body>
 </html>
