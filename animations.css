@@ -1,23 +1,46 @@
-/* Animasi scroll tambahan. Muat SETELAH style.css */
+/* Animasi scroll bertema Figma. Muat SETELAH style.css */
 
-/* Bilah progres scroll di paling atas */
-.progress{position:fixed;top:0;left:0;right:0;height:3px;z-index:70;background:var(--blue);transform:scaleX(0);transform-origin:left;pointer-events:none}
+.progress{position:fixed;top:0;left:0;right:0;height:5px;z-index:70;background:var(--blue);transform:scaleX(0);transform-origin:left;pointer-events:none}
 
-/* Elemen muncul saat masuk layar. Arah gerak diatur lewat variabel */
-@keyframes rvIn{from{opacity:0;transform:translate3d(var(--x,0),var(--y,26px),0) scale(var(--s,1))}}
+/* 1. Judul: kata naik dari balik garis potong */
+.w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.15em;margin-bottom:-.15em}
+.w>span{display:inline-block;transform-origin:0 100%}
+@keyframes wordUp{from{transform:translateY(115%)}}
+.js .sp:not(.in) .w>span{transform:translateY(115%)}
+.sp.in .w>span{animation:wordUp .8s var(--ease) calc(var(--i) * .06s + var(--d,0s)) backwards!important}
+.sec-title::after{content:"";display:block;width:56px;height:4px;margin-top:14px;border-radius:2px;background:var(--blue);transform-origin:left;transition:transform .8s .45s var(--ease)}
+.js .sec-title.fx:not(.in)::after{transform:scaleX(0)}
+
+
+/* 3. Foto dokumentasi: terbuka seperti tirai, gambar mengecil ke ukuran asli */
+@keyframes curtain{from{clip-path:inset(0 100% 0 0)}}
+@keyframes unzoom{from{transform:scale(1.12)}}
+.js .doc.cur{animation:none}
+.js .cur:not(.in)>button{clip-path:inset(0 100% 0 0)}
+.js .cur:not(.in) figcaption{opacity:0}
+.cur.in>button{animation:curtain .9s var(--ease) var(--d,0s) backwards!important}
+.cur.in img{animation:unzoom 1.2s var(--ease) var(--d,0s) backwards!important}
+.cur.in figcaption{animation:rvIn .7s var(--ease) calc(var(--d,0s) + .35s) backwards!important;--y:16px}
+
+/* 4. Pita skill yang bergeser mengikuti scroll */
+.strip{overflow:hidden;margin-top:72px;padding:26px 0;border-block:1px solid var(--line);background:rgba(255,255,255,.55);user-select:none;pointer-events:none}
+.strip .tr{display:flex;width:max-content;font:800 clamp(40px,6vw,80px)/1.25 var(--hf);letter-spacing:-.02em;will-change:transform}
+.strip .tr+.tr{margin-top:4px}
+.strip span{display:flex;align-items:center;margin-right:.5em;white-space:nowrap}
+.strip span::after{content:"";width:.2em;height:.2em;margin-left:.5em;border-radius:50%;background:var(--blue)}
+.strip span:nth-child(even),.strip .tr+.tr span:nth-child(odd){color:transparent;-webkit-text-stroke:1.5px var(--ink)}
+.strip .tr+.tr span:nth-child(even){color:var(--ink);-webkit-text-stroke:0}
+
+/* 5. Muncul biasa untuk elemen kecil */
+@keyframes rvIn{from{opacity:0;filter:blur(var(--b,0px));transform:translate3d(var(--x,0),var(--y,36px),0) scale(var(--s,1))}}
 .js .rv{opacity:0}
-.js .rv.in{opacity:1;animation:rvIn .75s var(--ease) var(--d,0s) backwards}
-.js .rv.in.skip{animation:none}
-.rv-left{--x:-32px;--y:0px}
-.rv-right{--x:44px;--y:0px}
-.rv-scale{--s:.94;--y:20px}
+.js .rv.in{opacity:1;animation:rvIn .8s var(--ease) var(--d,0s) backwards!important}
+.rv-left{--x:-50px;--y:0px}
+.rv-pop{--s:.7;--y:16px}
+.js .rv-pop.in{animation-timing-function:cubic-bezier(.34,1.56,.64,1)!important}
 
-/* Foto dokumentasi sebelumnya punya animasi sendiri saat halaman dibuka, ditunda sampai di-scroll */
-.js .doc.rv:not(.in){animation:none}
-
-/* Garis di bawah judul section tergambar */
-.sec-title::after{content:"";display:block;width:56px;height:4px;margin-top:14px;border-radius:2px;background:var(--blue);transform-origin:left;transition:transform .8s .35s var(--ease)}
-.js .sec-title.rv:not(.in)::after{transform:scaleX(0)}
+/* Elemen yang terlewat langsung tampil tanpa animasi */
+.js .fx.skip.in,.js .fx.skip.in *,.js .fx.skip.in::after{animation:none!important}
 
 /* Garis timeline terisi mengikuti scroll */
 .tl{position:relative}
@@ -29,4 +52,9 @@
 .panel.on .steps li:nth-child(3),.panel.on .sw b:nth-child(3){animation-delay:.14s}
 .panel.on .steps li:nth-child(4){animation-delay:.21s}
 
-@media (max-width:900px){.rv-right{--x:0px;--y:26px}}
+
+/* Perangkat meminta animasi dikurangi: hanya fade lembut yang dinyalakan lagi */
+.calm .rv{--x:0px;--y:0px;--s:1;--b:0px}
+@media (prefers-reduced-motion:reduce){
+  .js .rv.in{animation:rvIn .6s ease var(--d,0s) backwards!important}
+}
